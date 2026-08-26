@@ -1,0 +1,10 @@
+{
+  "name": "string-web-access",
+  "version": "1.0.0",
+  "description": "String Web Access fetches, searches and maps any website as clean, LLM-ready Markdown. It handles proxy rotation, anti-bot protection, CAPTCHAs and JavaScript rendering, so the agent gets the page instead of a block screen. Use it for sites that rate-limit, geo-gate or block automated traffic.",
+  "author": { "name": "String", "url": "https://github.com/usestring" },
+  "repository": "https://github.com/usestring/string-grok-plugin",
+  "homepage": "https://usestring.ai",
+  "license": "MIT",
+  "keywords": ["string", "string web access", "usestring"]
+}
