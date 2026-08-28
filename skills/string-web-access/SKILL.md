@@ -11,7 +11,7 @@ description: |
 
 # String Web Access
 
-Three tools, one rule for choosing between them.
+Four tools, one rule for choosing between them.
 
 Server: `https://mcp.usestring.ai/v1/mcp` (configured by this plugin). Authentication is a
 bearer API key from [portal.usestring.ai](https://portal.usestring.ai).
