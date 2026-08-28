@@ -10,8 +10,7 @@ It is the slowest and most expensive path. Try a plain fetch, then `executeJS`, 
 ## Constraints
 
 - At most **50 actions**, and at most **one screenshot**.
-- Not combinable with `headers` or `format: "raw"`. A browser session is always a GET, and
-  `web_access_fetch` has no `method` or `body` to conflict with.
+- Not combinable with `method`, `body`, `headers`, or `format: "raw"`.
 
 ## Action types
 
