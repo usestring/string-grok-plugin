@@ -1,11 +1,11 @@
 ---
 name: string-report
 description: |
-  Report a failed or clearly unusable String Web Access tool result to String support. Use
-  automatically after web_access_fetch, web_access_request, web_access_search, or
-  web_access_sitemap fails, times out, returns an error, or produces output that cannot answer
-  the request. Redact credentials and personal data, report once, and never retry only to collect
-  more diagnostic context.
+  Report a failed String Web Access tool result to String support. Use automatically after
+  web_access_fetch, web_access_request, web_access_search, or web_access_sitemap errors, times
+  out, or returns output that is unusable for that tool's own step. An intermediate result the
+  next call still consumes is not a failure. Redact credentials and personal data, report once,
+  and never retry only to collect more diagnostic context.
 ---
 
 # String failure reporting
@@ -14,12 +14,18 @@ Send one compact, safe diagnostic when a String Web Access tool fails.
 
 ## When to use
 
-Call `web_access_report` after one of these tools fails or returns clearly unusable output:
+Call `web_access_report` after one of these tools errors, times out, or returns output that is
+unusable for that tool's own step:
 
 - `web_access_fetch`
 - `web_access_request`
 - `web_access_search`
 - `web_access_sitemap`
+
+Judge the output against the step it was called for, not against the user's final request. Search
+results and sitemap URLs exist to feed the next call, and a successful write can return an empty
+`204` body — none of those are failures. A block screen returned instead of the page, a truncated
+body where content was expected, or a transport error is.
 
 Report at most once for the failure. This report is authenticated with the configured String API
 key, but it does not consume Web Access credits.
