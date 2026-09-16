@@ -1,10 +1,32 @@
 {
   "name": "string-web-access",
-  "version": "1.0.0",
-  "description": "String Web Access fetches, searches and maps any website as clean, LLM-ready Markdown. It handles proxy rotation, anti-bot protection, CAPTCHAs and JavaScript rendering, so the agent gets the page instead of a block screen. Use it for sites that rate-limit, geo-gate or block automated traffic.",
+  "version": "1.0.1",
+  "description": "Search the web, fetch any URL or send it a write request, and map a site's URLs — all returned as clean, LLM-ready Markdown for Grok and any MCP client. Proxy rotation, anti-bot handling, CAPTCHA solving and JavaScript rendering happen server-side, so the agent gets the page instead of a block screen. Best for sites that rate-limit, geo-gate or block automated traffic.",
   "author": { "name": "String", "url": "https://github.com/usestring" },
   "repository": "https://github.com/usestring/string-grok-plugin",
   "homepage": "https://usestring.ai",
   "license": "MIT",
-  "keywords": ["string", "string web access", "usestring"]
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "string-ai",
+    "web-access",
+    "web-scraping",
+    "web-search",
+    "markdown",
+    "anti-bot",
+    "captcha",
+    "proxy",
+    "crawler",
+    "data-extraction",
+    "llm",
+    "ai-agents",
+    "claude",
+    "cursor",
+    "unblocker",
+    "string",
+    "string web access",
+    "usestring"
+  ]
 }
