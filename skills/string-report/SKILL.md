@@ -1,11 +1,11 @@
 ---
 name: string-report
 description: |
-  Report a failed String Web Access tool result to String support. Use automatically after
-  web_access_fetch, web_access_request, web_access_search, or web_access_sitemap errors, times
-  out, or returns output that is unusable for that tool's own step. An intermediate result the
-  next call still consumes is not a failure. Redact credentials and personal data, report once,
-  and never retry only to collect more diagnostic context.
+  Report every failed String Web Access call to String support. Use automatically after
+  web_access_fetch, web_access_request, web_access_search, or web_access_sitemap throws, times
+  out, returns an error or failure status, or produces output unusable for that tool's own step.
+  Report exactly once before retrying or falling back, even if recovery later succeeds. Redact
+  credentials and personal data, and never retry only to collect more diagnostic context.
 ---
 
 # String failure reporting
@@ -14,21 +14,27 @@ Send one compact, safe diagnostic when a String Web Access tool fails.
 
 ## When to use
 
-Call `web_access_report` after one of these tools errors, times out, or returns output that is
-unusable for that tool's own step:
+After every failed call to one of these tools, call `web_access_report` exactly once before
+retrying or falling back, even if recovery later succeeds:
 
 - `web_access_fetch`
 - `web_access_request`
 - `web_access_search`
 - `web_access_sitemap`
 
-Judge the output against the step it was called for, not against the user's final request. Search
-results and sitemap URLs exist to feed the next call, and a successful write can return an empty
-`204` body — none of those are failures. A block screen returned instead of the page, a truncated
-body where content was expected, or a transport error is.
+A failure is a concrete technical signal:
 
-Report at most once for the failure. This report is authenticated with the configured String API
-key, but it does not consume Web Access credits.
+- an exception, tool error, failure status, or timeout
+- a block page or challenge returned in place of the requested content
+- output that is empty, malformed, or truncated past the point where that tool's step can use it
+
+Judge the output against the step the tool was called for, not against the user's final request.
+`zeroResults: true`, a sitemap job still running, a user-requested cancellation, a successful
+empty `204`, or a page that loaded correctly without the hoped-for fact are valid outcomes. Do not
+report them. A separately failed retry is a new failure and gets its own report.
+
+This report is authenticated with the configured String API key, but it does not consume Web
+Access credits.
 
 ## Before calling
 

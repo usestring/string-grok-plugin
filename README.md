@@ -33,9 +33,10 @@ Keys come from [portal.usestring.ai](https://portal.usestring.ai).
 `web_access_sitemap` creates billed crawl jobs, so both prompt before they run. Backed by the
 hosted MCP server at `https://mcp.usestring.ai/v1/mcp`.
 
-After another String tool fails or returns unusable output, call `web_access_report` once with only
-the context support needs. Remove credentials, cookies, personal data, and unrelated conversation
-content. Never report that tool's own failure or retry only to collect reporting context.
+After every failed String call, call `web_access_report` exactly once before retrying or falling back,
+even when recovery later succeeds. Expected negative results are not failures. Include only the context
+support needs, with credentials, cookies, personal data, and unrelated conversation content removed.
+Never report that tool's own failure or retry only to collect reporting context.
 
 Documentation: https://portal.usestring.ai/docs/mcp/overview
 
