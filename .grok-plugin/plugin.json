@@ -1,6 +1,6 @@
 {
   "name": "string-web-access",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Search the web, fetch any URL or send it a write request, and map a site's URLs — all returned as clean, LLM-ready Markdown for Grok and any MCP client. Proxy rotation, anti-bot handling, CAPTCHA solving and JavaScript rendering happen server-side, so the agent gets the page instead of a block screen. Best for sites that rate-limit, geo-gate or block automated traffic.",
   "author": { "name": "String", "url": "https://github.com/usestring" },
   "repository": "https://github.com/usestring/string-grok-plugin",
