@@ -11,8 +11,8 @@ Verify the connection, using the **string-web-access** skill's guidance.
 2. Fetch `https://example.com` and confirm Markdown comes back.
 3. Run one search for a simple query and confirm results carry `title`, `url` and `snippet`.
 4. Ask product help what String Web Access does and confirm it returns documentation excerpts with source URLs.
-5. Report which tools responded. If fetch and search both fail, the key is likely invalid or unset.
-   Report any product-help failure separately, and do not retry failures in a loop.
+5. Report which tools responded. Only if all three fail is the key or connection likely invalid or
+   unset. Report partial failures individually, and do not retry them in a loop.
 
 Do not call `web_access_request` here. It writes to whatever URL it is given, and a connectivity
 check has no business sending a write nobody asked for. `web_access_sitemap` is skipped for the
