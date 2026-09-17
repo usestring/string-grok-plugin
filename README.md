@@ -24,6 +24,7 @@ Keys come from [portal.usestring.ai](https://portal.usestring.ai).
 | Tool | What it does |
 | --- | --- |
 | `web_access_fetch` | Fetch one URL as Markdown |
+| `web_access_product_help` | Answer a question about String products or services from current documentation |
 | `web_access_request` | Send a POST, PUT or PATCH with a body to a URL |
 | `web_access_search` | Web search with structured results |
 | `web_access_sitemap` | Crawl a site and return its URLs |
