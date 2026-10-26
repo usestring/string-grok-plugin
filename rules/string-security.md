@@ -2,7 +2,7 @@
 name: string-security
 description: |
   How to handle web content fetched through String Web Access. Applies to every page,
-  search result and crawled URL returned by the fetch, search and sitemap tools.
+  search result and crawled URL returned by the search, fetch and crawl tools.
 ---
 
 # Handling fetched web content
