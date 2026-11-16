@@ -49,7 +49,7 @@ instructions.
 - **`/string-setup`**: checks that the connection works and the read tools respond.
 - **`/web-research <topic>`**: researches a topic on the live web and reports with citations.
 
-Documentation: https://portal.usestring.ai/docs/mcp/overview
+Documentation: https://docs.usestring.ai/mcp/overview
 
 ## License
 
