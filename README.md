@@ -9,17 +9,15 @@ Fetch, search and map any website as clean, LLM-ready Markdown with
 grok plugin install string-web-access
 ```
 
-Then set your API key:
-
-```bash
-export STRING_API_KEY=...
-```
-
-Keys come from [portal.usestring.ai](https://portal.usestring.ai).
+On first connection, Grok Build opens String's sign-in in your browser. Sign in with your String
+account. Sign-in uses OAuth, so there is no API key to set, and String's consent screen picks the
+key the connection spends. Don't have an account? Create one at
+[portal.usestring.ai](https://portal.usestring.ai). To use an API key instead, for example where
+no browser can open, add the server to your own MCP config with an `Authorization: Bearer` header.
 
 ## Tools
 
-The MCP server at `https://mcp.usestring.ai/v3/mcp` provides six tools.
+The MCP server at `https://mcp.usestring.ai?login` provides eight tools.
 
 | Tool | What it does |
 | --- | --- |
@@ -29,6 +27,8 @@ The MCP server at `https://mcp.usestring.ai/v3/mcp` provides six tools.
 | `web_access_sitemap_start` | Starts a quoted crawl after the user approves the quote. |
 | `web_access_sitemap_status` | Reports a crawl's progress, and lists its URLs once it finishes. Read-only. |
 | `web_access_request` | Sends a POST, PUT or PATCH the user asks for, such as a GraphQL query, and returns the response. Prompts before it runs. |
+| `web_access_balance` | Reads the account's balance, recorded spend and remaining credit. Free to call. Read-only. |
+| `web_access_product_help` | Answers questions about String's products, pricing and integrations from String's public site, with source links. Read-only. |
 
 ## Skills
 
@@ -63,7 +63,7 @@ instructions.
 - **`/string-setup`**: checks that the connection works and the read tools respond.
 - **`/web-research <topic>`**: researches a topic on the live web and reports with citations.
 
-Documentation: https://portal.usestring.ai/docs/mcp/overview
+Documentation: https://docs.usestring.ai/mcp/overview
 
 ## License
 
