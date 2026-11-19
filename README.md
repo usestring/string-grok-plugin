@@ -9,13 +9,11 @@ Fetch, search and map any website as clean, LLM-ready Markdown with
 grok plugin install string-web-access
 ```
 
-Then set your API key:
-
-```bash
-export STRING_API_KEY=...
-```
-
-Keys come from [portal.usestring.ai](https://portal.usestring.ai).
+On first connection, Grok Build opens String's sign-in in your browser. Sign in with your String
+account. Sign-in uses OAuth, so there is no API key to set, and String's consent screen picks the
+key the connection spends. Don't have an account? Create one at
+[portal.usestring.ai](https://portal.usestring.ai). To use an API key instead, for example where
+no browser can open, add the server to your own MCP config with an `Authorization: Bearer` header.
 
 ## Tools
 
